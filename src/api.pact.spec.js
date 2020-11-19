@@ -17,7 +17,7 @@ describe('API Pact test', () => {
   describe('retrieving a product', () => {
     test('ID 10 exists', async () => {
       // Arrange
-      const expectedProduct = { id: '10', type: 'CREDIT_CARDD', name: '28 Degrees' }
+      const expectedProduct = { id: '10', type: 'CREDIT_CARD', name: '28 Degrees' }
 
       await mockProvider.addInteraction({
         state: 'a product with ID 10 exists',
@@ -34,7 +34,7 @@ describe('API Pact test', () => {
           headers: {
             'Content-Type': regex({generate: 'application/json; charset=utf-8', matcher: 'application/json;?.*'}),
           },
-          body: expectedProduct,
+          body: like(expectedProduct),
         },
       });
 
