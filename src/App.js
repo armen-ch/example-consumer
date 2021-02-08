@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 const productPropTypes = {
   product: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    names: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
   }).isRequired
 };
@@ -20,7 +20,7 @@ const productPropTypes = {
 function ProductTableRow(props) {
   return (
     <tr>
-      <td>{props.product.name}</td>
+      <td>{props.product.names}</td>
       <td>{props.product.type}</td>
       <td>
         <Link className="btn btn-link" to={{
